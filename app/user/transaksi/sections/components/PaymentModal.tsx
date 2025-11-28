@@ -46,6 +46,30 @@ export default function PaymentModal({ onClose, onSubmit }: PaymentModalProps) {
 
           <div>
             <label className="font-medium text-bodyblack mb-1 block">
+              Metode Penarikan
+            </label>
+            <div className="relative">
+              <select
+                value={method}
+                onChange={(e) => setMethod(e.target.value)}
+                className="w-full h-12 border rounded-lg px-3 appearance-none focus:ring-2 focus:ring-green-primary outline-none"
+              >
+                <option value="" disabled>
+                  Pilih Metode Penarikan
+                </option>
+                <option value="bca">BCA</option>
+                <option value="bri">BRI</option>
+                <option value="dana">DANA</option>
+                <option value="ovo">OVO</option>
+                <option value="gopay">GoPay</option>
+              </select>
+              <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none">
+                <img src="/icons/user/arrow.svg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div>
+            <label className="font-medium text-bodyblack mb-1 block">
               Nomor Rekening / E-Wallet
             </label>
             <input
@@ -55,29 +79,6 @@ export default function PaymentModal({ onClose, onSubmit }: PaymentModalProps) {
               onChange={(e) => setNumber(e.target.value)}
               className="w-full h-12 border rounded-lg px-3 focus:ring-2 focus:ring-green-primary outline-none"
             />
-          </div>
-
-          <label className="font-medium text-bodyblack mb-1 block">
-            Metode Penarikan
-          </label>
-          <div className="relative">
-            <select
-              value={method}
-              onChange={(e) => setMethod(e.target.value)}
-              className="w-full h-12 border rounded-lg px-3 appearance-none focus:ring-2 focus:ring-green-primary outline-none"
-            >
-              <option value="" disabled>
-                Pilih Metode Penarikan
-              </option>
-              <option value="bca">BCA</option>
-              <option value="bri">BRI</option>
-              <option value="dana">DANA</option>
-              <option value="ovo">OVO</option>
-              <option value="gopay">GoPay</option>
-            </select>
-            <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none">
-              <img src="/icons/user/arrow.svg" alt="" />
-            </div>
           </div>
         </div>
 
